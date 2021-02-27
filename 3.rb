@@ -9,5 +9,9 @@
 # - Результат должен быть выведен в консоль командой puts
 #
 ## Решение:
-
-
+result = 0
+File.readlines("data/3.txt").each do |line|
+    arr = line.split(/\t/).map(&:to_i)
+    result += arr.max - arr.min
+end
+puts result

@@ -15,5 +15,9 @@
 #
 #
 ## Решение:
-
-
+result = 0
+File.readlines("data/4.txt").each do |line|
+    arr = line.split("x").map(&:to_i).sort
+    result += 2 * arr[2] * (arr[0] + arr[1]) + 3 * arr[0] * arr[1]
+end
+puts result

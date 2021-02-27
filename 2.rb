@@ -15,4 +15,12 @@
 #
 #
 ## Решение:
-
+require 'digest'
+input = gets.chomp
+number = 1
+md5 = Digest::MD5.hexdigest(input + number.to_s)
+while md5[0..4] != "00000" do
+    number += 1
+    md5 = Digest::MD5.hexdigest(input + number.to_s)
+end
+puts number

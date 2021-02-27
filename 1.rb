@@ -15,6 +15,16 @@
 #
 #
 ## Решение:
+level = 0
+File.read("data/1.txt").each_char do |chr|
+    if chr == "("
+        level += 1
+    elsif chr == ")"
+        level -= 1
+    end
+end
+puts level
+
 
 
 
